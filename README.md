@@ -4,9 +4,24 @@ An environment compatible with open-AI gym for the secretary problem
 
 ## The problem definition
 
+The secretary problem (also known as the marriage problem, the sultan's dowry problem, the fussy suitor problem, and secretary problem) is a problem that demonstrates a scenario involving optimal stopping theory.
+
+The basic version of the problemn can be stated as follows [[1]](https://en.wikipedia.org/wiki/Secretary_problem): 
+
+* There is a single position to fill.
+* There are n applicants for the position, and the value of n is known.
+* The applicants, if seen altogether, can be ranked from best to worst unambiguously.
+* The applicants are interviewed sequentially in random order, with each order being equally likely.
+* Immediately after an interview, the interviewed applicant is either accepted or rejected, and the decision is irrevocable.
+* The decision to accept or reject an applicant can be based only on the relative ranks of the applicants interviewed so far.
+* The objective of the general solution is to have the highest probability of selecting the best applicant of the whole group. This is the same as maximizing the expected payoff, with payoff defined to be one for the best applicant and zero otherwise.
+* A candidate is defined as an applicant who, when interviewed, is better than all the applicants interviewed previously. Skip is used to mean "reject immediately after the interview". Since the objective in the problem is to select the single best applicant, only candidates will be considered for acceptance. The "candidate" in this context corresponds to the concept of record in permutation.
+
+In this project a python code is developed to find the optimal stopping point (stopping point refers to how many applicant are rejected immediately). The method used here is simple Monte-Carlo method.
+
 ## The environment
 
-The environment is devised for an agent with the following internal state (```time```, ```best-so-far```, ```current```) where:
+Here we developed an environment compatible with OpenAI Gym environments. The environment is devised for an agent with the following internal state (```time```, ```best-so-far```, ```current```) where:
 
 * ```time``` -- represent the rescaled time-step, i.e the number of interviewed candidates divided by the total number of candidates (N),
 * ```best-so-far``` -- the best score of the interviewed candidates, and
@@ -55,3 +70,10 @@ env.reset()
 Now you can call the common Open-AI Gym APIs: ```step, reset, render, close, and seed```.
 
 Have fun and let me know if you started playing around with this env.
+
+## requirements
+```
+python3
+numpy
+gym
+```
