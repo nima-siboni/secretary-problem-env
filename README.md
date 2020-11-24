@@ -19,17 +19,16 @@ By each step, the environment is:
 
 In this implementation two actions are available to the agent:
 
-Continue (action 0): In this case the current candidate is rejected:
+**Continue (action 0)**: In this case the current candidate is rejected:
 
-    -- the state changes:  (i) time is increased by 1/N, (ii) the "best-so-far" variable is changed to max(best-so-far, current), and (iii) the current state is updated to a random value in range [0, 1] 
-    -- the reward is zero,
-    -- the process continues, i.e. done = False
+   * the state changes:  (i) time is increased by 1/N, (ii) the "best-so-far" variable is changed to max(best-so-far, current), and (iii) the current state is updated to a random value in range [0, 1] 
+   * the reward is zero,
+   * the process continues, i.e. done = False
 
-Halt (action 1): For this action the current candidate is accepted:
-  
-  -- the state changes: (i) time is increased by 1/N.
-  -- the reward is the score of the accepted candidate, and 
-  -- the process is terminated. Assigning a new state is meaningless here.
+**Halt (action 1)**: For this action the current candidate is accepted:
+    * the state changes: (i) time is increased by 1/N.
+  * the reward is the score of the accepted candidate, and 
+  * the process is terminated. Assigning a new state is meaningless here.
 
 
 
