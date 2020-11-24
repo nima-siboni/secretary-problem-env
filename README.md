@@ -71,7 +71,7 @@ Now you can call the common Open-AI Gym APIs: ```step, reset, render, close, and
 
 Have fun and let me know if you started playing around with this env.
 
-## requirements
+## Requirements
 ```
 python3
 numpy
