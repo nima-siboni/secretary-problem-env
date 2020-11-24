@@ -26,7 +26,8 @@ In this implementation two actions are available to the agent:
    * the process continues, i.e. done = False
 
 **Halt (action 1)**: For this action the current candidate is accepted:
-    * the state changes: (i) time is increased by 1/N.
+
+  * the state changes: (i) time is increased by 1/N.
   * the reward is the score of the accepted candidate, and 
   * the process is terminated. Assigning a new state is meaningless here.
 
